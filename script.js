@@ -18,3 +18,10 @@ var map = new L.Map('map', {
   center: new L.LatLng(52, 5.3),
   zoom: 3
 });
+// test RD coordinates
+map.on('click', function(e) {
+    if (window.console) {
+        var point = RD.projection.project(e.latlng);
+        console.log("RD X: " + point.x + ", Y: " + point.y);
+    }
+});
